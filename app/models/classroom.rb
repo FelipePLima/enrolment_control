@@ -6,8 +6,13 @@ class Classroom < ActiveRecord::Base
   belongs_to :course
 
   def student_in_course
-    if Classroom.where(student_id: student_id, course_id: course_id).count > 0
+    if has_classroom?
       errors.add('Estudante','O estudante já está cadastrado neste curso!')
     end
   end
+
+  def has_classroom?
+    Classroom.where(student_id: student_id, course_id: course_id).count > 0
+  end
+
 end
