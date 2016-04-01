@@ -24,7 +24,7 @@ class StudentsController < ApplicationController
   def create
     @student = Student.new(student_params)
     if @student.save
-      flash[:success] == "Estudante criado com sucesso!"
+      flash[:success] = "Estudante criado com sucesso!"
       redirect_to students_path
     else
       respond_with(@student)
@@ -34,7 +34,7 @@ class StudentsController < ApplicationController
   def update
     @student = Student.find(params[:id])
     if @student.update_attributes(student_params)
-      flash[:success] == "Estudante editado com sucesso!"
+      flash[:success] = "Estudante editado com sucesso!"
       respond_with(@student)
     else
       respond_with(@student)

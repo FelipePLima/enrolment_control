@@ -1,10 +1,14 @@
-<%= link_to 'Voltar', students_path %>
-
 <div class="content">
-  <h1><%= @student.name %></h1><br />
-  Número Registro: <%= @student.register_number %><br />
-  Status: <%= @student.status %><br />
+  <h4>
+    <%= @student.name %>
+    <small>
+    <%= link_to 'Voltar', students_path %>
+  </h4>
+  <div class="box_show">
+    <p>Número Registro: <%= @student.register_number %></p>
+    <p>Status: <%= status_name @student.status %></p>
+  </div>
+  <%= link_to 'Deletar', {action: 'destroy', id: @student}, {method: "delete"}  %> |
+  <%= link_to 'Editar', edit_student_path(@student.id) %>
 </div>
 
-<%= link_to 'Deletar', {action: 'destroy', id: @student}, {method: "delete"}  %>
-<%= link_to 'Editar', edit_student_path(@student.id) %>

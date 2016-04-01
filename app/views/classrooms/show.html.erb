@@ -1,0 +1,14 @@
+<div class="content">
+  <h4 class="title">
+    Mátricula - <%= @classroom.id %>
+    <small>
+    <%= link_to 'Voltar', classrooms_path %>
+  </h4>
+  <div class="box_show">
+    <p>Estudante: <%= @classroom.student.name %></p>
+    <p>Curso: <%= @classroom.course.name %></p>
+    <p>Data: <%= date_format @classroom.entry_at %></p>
+  <div>
+  <%= link_to 'Deletar', {action: 'destroy', id: @classroom}, {method: "delete"}  %> |
+  <%= link_to 'Editar', edit_classroom_path(@classroom.id) %>
+</div>

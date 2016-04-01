@@ -22,9 +22,16 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :status, class: "col-md-2 control-label", for: "textinput" %>
+    <%= f.label :status, class: "col-md-2 control-label", for: "radios" %>
     <div class="col-md-4">
-      <%= f.text_field :status, maxlength: 20, class: "form-control input-md" %>
+      <label class="radio-inline" for="radios-0">
+        <%= radio_button("student", "status", 1, checked: true) %>
+        Ativo
+      </label>
+      <label class="radio-inline" for="radios-1">
+        <%= radio_button("student", "status", 2) %>
+        Inativo
+      </label>
     </div>
   </div>
 

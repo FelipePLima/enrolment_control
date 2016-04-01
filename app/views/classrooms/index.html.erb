@@ -1,0 +1,29 @@
+<h4>
+  <span class="title">Mátriculas</span>
+  <small>
+  <%= link_to 'Novo', new_classroom_path %>
+</h4>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Estudante</th>
+      <th>Curso</th>
+      <th>Data</th>
+      <th>Show</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @classrooms.each do |classroom|%>
+      <tr>
+        <td><%= classroom.student.name %></td>
+        <td><%= classroom.course.name %></td>
+        <td><%= date_format classroom.entry_at %></td>
+        <td>
+          <%= link_to classroom_path(classroom.id) do %>
+            <%= content_tag :span, nil, class: "glyphicon glyphicon-plus" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

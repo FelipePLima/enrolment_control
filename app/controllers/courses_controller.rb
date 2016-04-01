@@ -24,7 +24,7 @@ class CoursesController < ApplicationController
   def create
     @course = Course.new(course_params)
     if @course.save
-      flash[:success] == "Curso criado com sucesso!"
+      flash[:success] = "Curso criado com sucesso!"
       redirect_to courses_path
     else
       respond_with(@course)
@@ -34,7 +34,7 @@ class CoursesController < ApplicationController
   def update
     @course = Course.find(params[:id])
     if @course.update_attributes(course_params)
-      flash[:success] == "Curso editado com sucesso!"
+      flash[:success] = "Curso editado com sucesso!"
       respond_with(@course)
     else
       respond_with(@course)

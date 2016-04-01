@@ -1,5 +1,5 @@
 <h4>
-  Cursos
+  <span class="title">Cursos</span>
   <small>
   <%= link_to 'Novo', new_course_path %>
 </h4>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= course.name %></td>
         <td><%= course.description %></td>
-        <td><%= course.status %></td>
+        <td><%= status_name course.status %></td>
         <td>
           <%= link_to course_path(course.id) do %>
             <%= content_tag :span, nil, class: "glyphicon glyphicon-plus" %>

@@ -1,5 +1,5 @@
 <h4>
-  Estudantes
+  <span class="title">Estudantes</span>
   <small>
   <%= link_to 'Novo', new_student_path %>
 </h4>
@@ -17,7 +17,7 @@
       <tr>
         <td><%= student.name %></td>
         <td><%= student.register_number %></td>
-        <td><%= student.status %></td>
+        <td><%= status_name student.status %></td>
         <td>
           <%= link_to student_path(student.id) do %>
             <%= content_tag :span, nil, class: "glyphicon glyphicon-plus" %>
