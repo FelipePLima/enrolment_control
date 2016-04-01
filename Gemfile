@@ -27,6 +27,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'devise'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 group :production do
   gem 'rails_12factor'
