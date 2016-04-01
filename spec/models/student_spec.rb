@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Student, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should validate_presence_of(:name) }
+  it { should validate_presence_of(:register_number) }
+  it { should validate_presence_of(:status) }
+  it { should validate_uniqueness_of(:register_number) }
 end
