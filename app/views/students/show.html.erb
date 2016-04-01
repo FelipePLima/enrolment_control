@@ -1,0 +1,10 @@
+<%= link_to 'Voltar', students_path %>
+
+<div class="content">
+  <h1><%= @student.name %></h1><br />
+  Número Registro: <%= @student.register_number %><br />
+  Status: <%= @student.status %><br />
+</div>
+
+<%= link_to 'Deletar', {action: 'destroy', id: @student}, {method: "delete"}  %>
+<%= link_to 'Editar', edit_student_path(@student.id) %>

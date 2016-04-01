@@ -1,0 +1,36 @@
+<%= form_for @student, html: {class: "form-horizontal"} do |f| %>
+  <% if @student.errors.any? %>
+    <div class="bg-danger">
+      <% @student.errors.each do |attribute, message| %>
+        <p class="text-muted"><%= attribute%> - <%= message %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name, class: "col-md-2 control-label", for: "textinput" %>
+    <div class="col-md-4">
+      <%= f.text_field :name, maxlength: 45, class: "form-control input-md" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :register_number, class: "col-md-2 control-label", for: "textinput" %>
+    <div class="col-md-4">
+      <%= f.text_field :register_number, maxlength: 45, class: "form-control input-md" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :status, class: "col-md-2 control-label", for: "textinput" %>
+    <div class="col-md-4">
+      <%= f.text_field :status, maxlength: 20, class: "form-control input-md" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-7 pull-right">
+      <%= f.button :submit, class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
