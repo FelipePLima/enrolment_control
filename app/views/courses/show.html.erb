@@ -1,0 +1,10 @@
+<%= link_to 'Voltar', courses_path %>
+
+<div class="content">
+  <h1><%= @course.name %></h1><br />
+  Descrição: <%= @course.description %><br />
+  Status: <%= @course.status %><br />
+</div>
+
+<%= link_to 'Deletar', {action: 'destroy', id: @course}, {method: "delete"}  %>
+<%= link_to 'Editar', edit_course_path(@course.id) %>

@@ -1,0 +1,29 @@
+<h4>
+  Cursos
+  <small>
+  <%= link_to 'Novo', new_course_path %>
+</h4>
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Curso</th>
+      <th>Descrição</th>
+      <th>Status</th>
+      <th>Show</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @courses.each do |course|%>
+      <tr>
+        <td><%= course.name %></td>
+        <td><%= course.description %></td>
+        <td><%= course.status %></td>
+        <td>
+          <%= link_to course_path(course.id) do %>
+            <%= content_tag :span, nil, class: "glyphicon glyphicon-plus" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
