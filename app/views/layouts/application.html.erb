@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Controle de Mátriculas</title>
+    <title>Controle de Matrículas</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
@@ -10,14 +10,14 @@
     <div class="navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
-         <%= link_to 'Controle de Mátriculas', root_path, class: "navbar-brand" %>
+         <%= link_to 'Controle de Matrículas', root_path, class: "navbar-brand" %>
         </div>
         <div class="collapse navbar-collapse">
           <% if user_signed_in? %>
             <ul class="nav navbar-nav">
               <li><%= link_to 'Estudantes', students_path %></li>
               <li><%= link_to 'Cursos', courses_path %></li>
-              <li><%= link_to 'Mátriculas', classrooms_path %></li>
+              <li><%= link_to 'Matrículas', classrooms_path %></li>
               <li><%= link_to 'Sair', destroy_user_session_path %></li>
             </ul>
           <% end %>
